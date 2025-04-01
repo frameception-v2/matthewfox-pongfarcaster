@@ -1,3 +1,10 @@
 export const PROJECT_ID = 'farcaster-pong';
 export const PROJECT_TITLE = "Farcaster Pong";
 export const PROJECT_DESCRIPTION = "A classic Pong game for Farcaster Frames v2";
+export const GAME_WIDTH = 280;
+export const GAME_HEIGHT = 200;
+export const PADDLE_HEIGHT = 50;
+export const PADDLE_WIDTH = 10;
+export const BALL_SIZE = 10;
+export const BALL_SPEED = 3;
+export const PADDLE_SPEED = 8;

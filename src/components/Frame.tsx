@@ -47,7 +47,7 @@ export default function Frame() {
     let animationFrameId: number;
     let lastBallPos = { ...ballPosition };
     let lastBallVel = { ...ballVelocity };
-    let lastPlayerPos = playerPosition;
+    const lastPlayerPos = playerPosition;
     let lastAiPos = aiPosition;
 
     const gameLoop = () => {
@@ -182,7 +182,7 @@ export default function Frame() {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [gameStarted, playerScore, aiScore]);
+  }, [gameStarted, playerScore, aiScore, aiPosition, ballPosition, ballVelocity, playerPosition]);
 
   // Initialize canvas when component mounts
   useEffect(() => {
@@ -213,7 +213,7 @@ export default function Frame() {
     // Draw paddles
     ctx.fillRect(0, playerPosition, PADDLE_WIDTH, PADDLE_HEIGHT);
     ctx.fillRect(GAME_WIDTH - PADDLE_WIDTH, aiPosition, PADDLE_WIDTH, PADDLE_HEIGHT);
-  }, []);
+  }, [aiPosition, playerPosition]);
 
   // Reset ball to center - not used directly anymore, handled in game loop
 
